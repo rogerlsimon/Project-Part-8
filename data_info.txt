@@ -1,0 +1,19 @@
+Name of mp4 video    Frame rate
+confusion_dataset       30       
+samplevid_2             30
+samplevid_3             24
+samplevid_4             24
+samplevid_5             24
+samplevid_6             24
+samplevid_7             24
+samplevid_8             24
+samplevid_9             24
+samplevid_10            24
+samplevid_11            24
+samplevid_12            24
+samplevid_13            24
+samplevid_14            24
+samplevid_15            24
+samplevid_16            24
+samplevid_17            24
+samplevid_18            30
