@@ -1,4 +1,3 @@
-# Importing packages
 import numpy as np
 import matplotlib.pyplot as plt
 from numpy import loadtxt
@@ -7,9 +6,9 @@ from keras.models import load_model
 from sklearn.metrics import accuracy_score
 import pickle 
 
-name_of_mp4_video = 'samplevid_3' # exclude mp4 extension
+name_of_mp4_video = 'samplevid_8' # exclude mp4 extension
 frame_rate = 24
-num_members = 17
+num_members = 4
 
 # load models from file
 def load_all_models(n_models):
@@ -52,8 +51,8 @@ def stacked_prediction(members, model, inputX):
 
 
 # load dataset
-dataset_X = loadtxt('outfile_X_'+str(name_of_mp4_video)+'.txt', delimiter=" ")
-dataset_y = loadtxt('outfile_y_'+str(name_of_mp4_video)+'.txt', delimiter=" ")
+dataset_X = loadtxt('dataset/outfile_X_'+str(name_of_mp4_video)+'.txt', delimiter=" ")
+dataset_y = loadtxt('dataset/outfile_y_'+str(name_of_mp4_video)+'.txt', delimiter=" ")
 
 # load all sub-models
 members = load_all_models(num_members)
@@ -66,7 +65,7 @@ with open(pkl_filename, 'rb') as file:
 
 # Predicting the Test set results
 y_pred = stacked_prediction(members, model, dataset_X) # Probability of emotion shown 
-accuracy = accuracy_score(dataset_y, y_pred)
+accuracy_1 = accuracy_score(dataset_y, y_pred)
 
 #Plotting test results
 seconds = np.linspace(0, len(dataset_X)/frame_rate, len(dataset_X))
